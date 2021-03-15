@@ -1,0 +1,28 @@
+#inputUSER {
+	background: url('images/inputuser.png') no-repeat;
+    border: 0;
+    width: 164px;
+    height: 26px;
+	padding-top: 6px;
+    padding-left: 30px;
+    padding-right: 5px;
+}
+#inputPASS {
+	background: url('images/inputpass.png') no-repeat;
+    border: 0;
+    width: 164px;
+    height: 26px;
+	padding-top: 6px;
+    padding-left: 30px;
+    padding-right: 5px;
+}
+#panel h2 {
+	font-size: 18px;
+	font-weight: bold;
+	padding: 10px 0px 0px 0px;
+}
+#sidebar h2{
+	font-size: 18px;
+	font-weight: bold;
+	padding: 10px 0px 0px 0px;
+}

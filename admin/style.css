@@ -1,0 +1,124 @@
+﻿body {
+	background: #207D90 url('../images/background.png') repeat-x;
+	background-position: top center;
+	text-align: center;
+	font: 12px/125% 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+	text-decoration: none;
+	width: 960px;
+	height: auto;
+	margin: 0 auto;
+	cursor: url("../images/normal.cur"), text;
+}
+img {
+	border: 0;
+}
+a:hover{
+	cursor: url("../images/link.cur"), text;
+}
+.clear {
+	clear: both;
+}
+/* Header */
+#header {
+	background: url('../images/header.png') no-repeat;
+	height: 210px;
+	width: 960px;
+}
+/* Lang Buttons */
+#bglang {
+	background: url('../images/bglang.png') no-repeat;
+	width: 50px;
+	height: 50px;
+	float: right;
+}
+#enlang {
+	background: url('../images/enlang.png') no-repeat;
+	width: 50px;
+	height: 50px;
+	float: right;
+}
+#fontlang {
+	background: url('../images/fotnlang.png') no-repeat;
+	width: 50px;
+	height: 50px;
+	float: right;
+}
+#searchlang {
+	background: url('../images/searchlang.png') no-repeat;
+	width: 50px;
+	height: 50px;
+	float: right;
+	cursor: url("../images/link.cur"), text;
+}
+#search {
+	background: url('../images/search.png') no-repeat;
+	width: 150px;
+	height: 22px;
+	border:0px;
+	font-size: 11px;
+	padding-left: 5px;
+	font-weight: bold;
+}
+#page {
+	width: 920px;
+	margin: 0 auto;
+	padding: 20px 20px 0px 20px;
+	background: #fff;
+}
+/* Content */
+#content {
+	float: left;
+	width: 850px;
+} 
+.post {
+	width: 850px;
+	margin-bottom: 20px;
+	padding: 10px 35px;
+	background: #FFFFFF;
+	border: 1px solid #8D9AB0;
+	text-align: left;
+	background: #fff url('../images/postfoot.png') bottom repeat-x;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.post a {
+	color: #FF981F;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 11px;
+}
+.post a:hover {
+	color: #000;
+}
+.post .title {
+	height: 20px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 17px;
+}
+.post .posted {
+	height: 10px;
+	margin-top: -10px;
+	margin-left: 2px;
+	padding: 4px 30px 2px 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 10px;
+	color: #66665E;
+}
+.post .text {
+	border-top: 1px dotted #E0E0E0;
+	padding: 0px 0px;
+}
+/* Footer */
+#footer {
+	background: url('../images/right.gif') repeat-x;
+	height: 52px;
+}
+.footext, .footext a{
+	padding-top: 12px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
