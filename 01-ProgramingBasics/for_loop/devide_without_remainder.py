@@ -12,7 +12,7 @@ for number in range(1, n+1):
         p2 += 1
     if value % 4 == 0:
         p3 += 1
-
+        
 print(f"{(p1/n)*100:.2f}%")
 print(f"{(p2/n)*100:.2f}%")
 print(f"{(p3/n)*100:.2f}%")
