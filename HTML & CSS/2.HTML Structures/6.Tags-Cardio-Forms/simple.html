@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Customer Details</legend>
+			<div>
+				<label>First Name:</label>
+				<input type="Text" placeholder="George" autofocus>
+			</div>
+			<br/>
+			<div>
+				<label>Last Name:</label>
+				<input type="Text" placeholder="Devis">
+			</div>
+			<br/>
+			<div>
+				<label>Male</label>
+				<input type="radio" name="sex">
+				<label>Female</label>
+				<input type="radio" name="sex">
+				<label>Phone</label>
+				<input type="radio" name="sex">
+			</div>
+			<br/>
+			<div>
+				<label>Preferred contact method: Email</label>
+				<input type="radio" name="phone">
+				<label>Phone</label>
+				<input type="radio" name="p">
+			</div>
+			<br/>
+			<div>
+				<label>Email:</label>
+				<input type="email" placeholder="your@email.com">
+			</div>
+			<br/>
+			<div>
+				<label>Phone:</label>
+				<input type="Text" placeholder="+359885236225">
+			</div>
+			<br/>
+			<div>
+				<label>Town</label>
+				<select>
+					<option>Varna</option>
+					<option>Plovdiv</option>
+					<option>Burgas</option>
+					<option>Sofia</option>
+					<option>Pleven</option>
+				</select>
+			</div>
+			<br/>
+			<div>
+				<label>Age:</label>
+				<input type="number" min="18" max="70">
+			</div>
+			<br/>
+			<div>
+				<label>Programming language:</label>
+				<input list="ice" />
+				<datalist id="ice">
+					<option value="Java">
+					<option value="PHP">
+					<option value="C#">
+					<option value="JavaScript">
+					<option value="Python">
+					<option value="Ruby">
+					<option value="Other">
+				</data>
+			</div>
+			<br/>
+			<div>
+				<textarea rows="5" cols="20" placeholder="More information..."></textarea>
+			</div>
+			<br/>
+			<div>
+				<input type="checkbox"><label>I agree the Terms and Conditions</label>
+			</div>
+			<br/>
+			<div>
+				<input type="submit" value="Send">
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
