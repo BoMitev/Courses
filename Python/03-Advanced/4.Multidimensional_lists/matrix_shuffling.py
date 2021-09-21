@@ -15,7 +15,7 @@ while True:
 
     if len(command) == 5 and all(int(i) >= 0 for i in command[1:]):
         pos1, pos2, pos3, pos4 = [int(x) for x in command[1:]]
-        if pos1 not in range(len(matrix)) or pos2 not in range(len(matrix)) \
+        if pos1 not in range(len(matrix)) or pos3 not in range(len(matrix)) \
                 or pos2 not in range(len(matrix[pos1])) or pos4 not in range(len(matrix[pos3])):
             print("Invalid input!")
             continue
