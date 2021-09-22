@@ -17,7 +17,6 @@
 # For example, if Peter hits position with coordinates (2, 1), he wins (23 + 2 + 9 + 18) * 2 = 104 points and they are deducted from his total.
 # Your job is to find who won the game and with how many turns.
 
-
 import re
 def read_matrix():
     matrix = []
