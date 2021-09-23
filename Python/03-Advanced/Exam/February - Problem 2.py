@@ -1,3 +1,13 @@
+# On the first line, you will be given a number representing the size of the field with square shape. On the next few lines, you will be given a field with: 
+# •	One player randomly placed in it and marked with symbol "P"
+# •	Numbers for coins placed at different positions of the field
+# •	Walls marked with "X".
+# After the field state, you will be given commands for the players movement. Commands can be: "up", "down", "left", "right". If the command is invalid, you should ignore it. 
+# If the player goes out of the field or he hits a wall, he loses the game and his coins are reduced to 50% and rounded down to the next-lowest number. The program ends.
+# Otherwise, the player has to collect at least 100 coins to win the game.
+# For more clarifications see the examples below.
+
+
 from math import floor
 
 
