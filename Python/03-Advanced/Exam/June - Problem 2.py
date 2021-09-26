@@ -1,3 +1,11 @@
+# You will be given an integer n for the size of the snake territory with square shape. On the next n lines, you will receive the rows of the territory. The snake will be placed on a random position, marked with the letter 'S'. On random positions there will be food, marked with '*'. There might also be a lair on the territory. The lair has two burrows. They are marked with the letter - 'B'. All of the empty positions will be marked with '-'.
+# Each turn, you will be given command for the snake’s movement. When the snake moves it leaves a trail marked with '.'
+# Move commands will be: "up", "down", "left", "right".
+# If the snake moves to a food, it eats the food and increases the food quantity with one.
+# If it goes inside of a burrow, it goes out on the position of the other burrow and then both burrows disappear. If the snake goes out of its territory, it loses, can't return back and the program ends. The snake needs at least 10 food quantity to win.
+# When the snake has gone outside of its territory or has eaten enough food, the game ends.
+
+
 def is_inside(row, col, size):
     return 0 <= row < size and 0 <= col < size
 
