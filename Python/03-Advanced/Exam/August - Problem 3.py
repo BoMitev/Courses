@@ -22,10 +22,10 @@ def numbers_searching(*args, missing_n=None, res=None):
     return numbers_searching(*args[1:], missing_n=missing_n, res=res)
 
 # Second solving
-def numbers_searching(*nums):
-    dublicated = sorted(list(set([x for x in nums if nums.count(x) > 1])))
-    missing_num = sorted(set(range(min(nums), max(nums))).difference(nums))
-    return [missing_num[-1], dublicated]
+# def numbers_searching(*nums):
+#     dublicated = sorted(list(set([x for x in nums if nums.count(x) > 1])))
+#     missing_num = sorted(set(range(min(nums), max(nums))).difference(nums))
+#     return [missing_num[-1], dublicated]
 
 
 print(numbers_searching(1, 2, 4, 2, 5, 4))
