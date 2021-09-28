@@ -1,0 +1,9 @@
+.gallery li {
+    display: inline-block;
+}
+
+ul.gallery li img{
+    width: 0.4 rem;
+    border: 3px solid black;
+    padding: 10px;
+}
