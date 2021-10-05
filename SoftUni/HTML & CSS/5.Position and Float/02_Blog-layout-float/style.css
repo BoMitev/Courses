@@ -1,0 +1,49 @@
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+body {
+    background-color: rgb(238, 238, 238);
+}
+.site-title {
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 30px;
+}
+h1, h2, h3{
+    font-family: Georgia, serif;
+}
+main {
+    display: inline-block;
+}
+
+main img {
+    margin: 10px;
+    padding: 5px;
+    border: 5px solid black;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0, 0, 0, 0.25);
+}
+
+main blockquote {
+    float: right;
+    font-style: italic;
+    border-left: 5px solid rgb(221, 221, 221);
+    padding: 3px;
+    font-family: Georgia, serif;
+}
+
+main blockquote p {
+    display: inline;
+    padding: 10px;
+}
+
+.escalatop-image {
+    float: right;
+}
+
+.dog-image {
+    float: left;
+}
