@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    background-color: #ccc;
+}
+.gallery {
+    width: 80%;
+    margin: auto;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+li {
+    display: flex;
+    background-color: #fff;
+    border: 5px solid #000;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+}
+img {
+    height: fit-content;
+}

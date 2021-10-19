@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 120px;
+    
+}
+
+header, main, aside, footer {
+    box-shadow: 1px 1px 11px -2px #000;
+    background-color: #fff;
+    text-transform: uppercase;
+    border-radius: 12px;
+}
+
+header{ 
+    padding: 10px 10px 70px 10px;
+    flex-basis: 100%;
+}
+main, aside {
+    margin: 20px 0;
+    padding: 10px 10px 200px 10px;
+}
+
+main {
+    margin-right: 20px;
+    flex-grow: 3;
+}
+aside {
+    flex-grow: 1;
+}
+footer {
+    padding: 10px 10px 50px 10px;
+    flex-basis: 100%;
+}
