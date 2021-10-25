@@ -1,9 +1,11 @@
+# Create Node
 class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
 
+
+# Constructor
 class LinkedList:
     def __init__(self, value):
         new_node = Node(value)
@@ -36,7 +38,7 @@ class LinkedList:
             return None
         temp = self.head
         pre = self.head
-        while(temp.next):
+        while temp.next:
             pre = temp
             temp = temp.next
         self.tail = pre
@@ -79,12 +81,54 @@ class LinkedList:
         for _ in range(index):
             temp = temp.next
         return temp
-        
 
-my_linked_list = LinkedList(0)
-my_linked_list.append(1)
-my_linked_list.append(2)
-my_linked_list.append(3)
+# Set method
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
 
-print(my_linked_list.get(2))
+# Insert method
+    def insert(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        new_node = Node(value)
+        temp = self.get(index - 1)
+        new_node.next = temp.next
+        temp.next = new_node
+        self.length += 1
+        return True
 
+# Remove method
+    def remove(self, index):
+        if index < 0 or index > self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        prev = self.get(index - 1)
+        temp = prev.next
+        prev.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
+
+# Reverse method
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
