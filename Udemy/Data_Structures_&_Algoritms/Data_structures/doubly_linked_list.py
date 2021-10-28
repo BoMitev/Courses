@@ -33,7 +33,7 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
-   # Pop
+# Pop
     def pop(self):
         if self.length == 0:
             return None
@@ -75,7 +75,8 @@ class DoublyLinkedList:
             temp.next = None      
         self.length -= 1
         return temp
-
+    
+ # Lookup
     def get(self, index):
         if index < 0 or index >= self.length:
             return None
