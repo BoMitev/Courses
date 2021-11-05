@@ -24,7 +24,7 @@ class Profile:
 
     @property
     def password(self):
-        return self.password
+        return self.__password
 
     @password.setter
     def password(self, value):
