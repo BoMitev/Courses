@@ -1,8 +1,10 @@
-from project.baked_food.baked_food import BakedFood
-from project.baked_food.bread import Bread
 from project.baked_food.cake import Cake
+from project.baked_food.bread import Bread
 from project.drink.tea import Tea
 from project.drink.water import Water
+from project.table.inside_table import InsideTable
+from project.table.outside_table import OutsideTable
+from project.table.table import Table
 
 class Bakery:
     __TYPE_OF_FOODS = {
@@ -13,7 +15,10 @@ class Bakery:
         "Tea": Tea,
         "Water": Water,
     }
-
+    __TYPE_OF_TABLE = {
+        "InsideTable": InsideTable,
+        "OutsideTable": OutsideTable,
+    }
     def __init__(self, name):
         self.name = name
         self.food_menu = []
@@ -47,6 +52,14 @@ class Bakery:
 
         self.drinks_menu.append(drink)
         return f"Added {name} ({drink_type}) to the food menu"
+
+    def add_table(self, table_type, table_number, capacity):
+        table = Bakery.__TYPE_OF_TABLE[table_type](table_number, capacity)
+        if table in self.tables_repository:
+            raise Exception(f"Table {table_number} is already in the bakery!")
+
+        self.tables_repository.append(table)
+        return f"Added table number {table_number} in the bakery"
 
     def reserve_table(self, number_of_people):
         for table in self.tables_repository:
@@ -111,7 +124,7 @@ class Bakery:
     def get_free_tables_info(self):
         info = []
         for table in self.tables_repository:
-            if not table._is_reversed:
+            if table.is_reversed is not None:
                 info.append(table.free_table_info())
 
         return '\n'.join(info)
