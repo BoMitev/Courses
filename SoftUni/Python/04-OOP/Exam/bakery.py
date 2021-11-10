@@ -30,14 +30,14 @@ class Bakery:
 
     @property
     def name(self):
-        return self.__name
+        return self._name
 
     @name.setter
     def name(self, value):
-        if not value or value == " ":
+        if value == "" or value == " ":
             raise ValueError("Name cannot be empty string or white space!")
 
-        self.__name = value
+        self._name = value
 
     def add_food(self, food_type, name, price):
         if name in [f.name for f in self.food_menu]:
@@ -68,18 +68,14 @@ class Bakery:
 
     def _available_table(self, number_of_people):
         for table in self.tables_repository:
-            if not table.is_reversed and table.capacity >= number_of_people:
+            if not table.is_reserved and table.capacity >= number_of_people:
                 return table
 
         return None
 
     def reserve_table(self, number_of_people):
-        table = self._available_table(number_of_people)
-        if not table:
-            return f"No available table for {number_of_people} people"
-
-        table.reserve(number_of_people)
-        return f"Added table number {table.table_number} has been reserved for {number_of_people} people"
+        for table in self.tables_repository:
+            return table.reserve(number_of_people)
 
     def _table_from_table_number(self, table_number):
         for table in self.tables_repository:
@@ -107,24 +103,23 @@ class Bakery:
         return '\n'.join(info)
 
     def order_food(self, table_number, *food_names):
-        return self._table_order(table_number, food_names, self.food_menu)
+        return self._table_order(table_number, *food_names, self.food_menu)
 
     def order_drink(self, table_number, *drink_names):
-        return self._table_order(table_number, drink_names, self.drinks_menu)
+        return self._table_order(table_number, *drink_names, self.drinks_menu)
 
     def leave_table(self, table_number):
         table = self._table_from_table_number(table_number)
-        if table:
-            bill = table.get_bill()
-            self.total_income += bill
-            table.clear()
-            return f"Table: {table_number}\n" \
-                   f"Bill: {bill:.2f}"
+        bill = table.get_bill()
+        self.total_income += bill
+        table.clear()
+        return f"Table: {table_number}\n" \
+               f"Bill: {bill:.2f}"
 
     def get_free_tables_info(self):
         info = []
         for table in self.tables_repository:
-            if not table.is_reversed:
+            if not table.is_reserved:
                 info.append(table.free_table_info())
 
         return '\n'.join(info)
