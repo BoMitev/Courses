@@ -87,6 +87,7 @@ class Bakery:
     @staticmethod
     def _request_food(order_menu, order_names, table: Table):
         ordered, unordered = [], []
+        menu_names = [f.name for f in order_menu]
 
         for order_name in order_names:
             for order in order_menu:
@@ -96,8 +97,10 @@ class Bakery:
                     elif isinstance(order, Drink):
                         table.order_drink(order)
                     ordered.append(repr(order))
-                else:
-                    unordered.append(order.name)
+
+        for food in order_names:
+            if food not in menu_names:
+                unordered.append(food)
 
         return ordered, unordered
 
