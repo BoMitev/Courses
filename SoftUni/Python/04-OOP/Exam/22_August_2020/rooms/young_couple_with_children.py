@@ -1,0 +1,14 @@
+from everland.appliances.fridge import Fridge
+from everland.appliances.laptop import Laptop
+from everland.appliances.tv import TV
+from everland.rooms.room import Room
+
+
+class YoungCoupleWithChildren(Room):
+    def __init__(self, family_name, salary_one, salary_two, *children):
+        count = 2 + len(children)
+        super().__init__(family_name, salary_one + salary_two, count)
+        self.room_cost = 30
+        self.children = list(children)
+        self.appliances = [TV(), Fridge(), Laptop()] * count
+        self.calculate_expenses(self.appliances, self.children)
