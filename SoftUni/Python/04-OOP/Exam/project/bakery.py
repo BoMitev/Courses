@@ -22,7 +22,6 @@ class Bakery:
         "InsideTable": InsideTable,
         "OutsideTable": OutsideTable,
     }
-
     def __init__(self, name):
         self.name = name
         self.food_menu = []
@@ -36,7 +35,7 @@ class Bakery:
 
     @name.setter
     def name(self, value):
-        if not value or value == " ":
+        if not value or value.isspace():
             raise ValueError("Name cannot be empty string or white space!")
 
         self.__name = value
@@ -85,22 +84,23 @@ class Bakery:
                 return table
 
     @staticmethod
-    def _request_food(order_menu, order_names, table: Table):
+    def _request_food(order_menu, order_names, table: Table, type_food):
+        _MENU_TYPES = {
+            "food": table.order_food,
+            "drink": table.order_drink,
+        }
+
         ordered, unordered = [], []
         menu_names = [f.name for f in order_menu]
 
         for order_name in order_names:
+            if order_name not in menu_names:
+                unordered.append(order_name)
+                continue
             for order in order_menu:
                 if order_name == order.name:
-                    if isinstance(order, BakedFood):
-                        table.order_food(order)
-                    elif isinstance(order, Drink):
-                        table.order_drink(order)
+                    _MENU_TYPES[type_food](order)
                     ordered.append(repr(order))
-
-        for food in order_names:
-            if food not in menu_names:
-                unordered.append(food)
 
         return ordered, unordered
 
@@ -109,7 +109,7 @@ class Bakery:
         if table is None:
             return f"Could not find table {table_number}"
 
-        ordered_food, unordered_food = self._request_food(self.food_menu, food_names, table)
+        ordered_food, unordered_food = self._request_food(self.food_menu, food_names, table, "food")
         info = [f"Table {table_number} ordered:"] + ordered_food +\
                [f"{self.name} does not have in the menu:"] + unordered_food
 
@@ -120,7 +120,7 @@ class Bakery:
         if table is None:
             return f"Could not find table {table_number}"
 
-        ordered_drinks, unordered_drinks = self._request_food(self.drinks_menu, drinks_names, table)
+        ordered_drinks, unordered_drinks = self._request_food(self.drinks_menu, drinks_names, table, "drink")
         info = [f"Table {table_number} ordered:"] + ordered_drinks +\
                [f"{self.name} does not have in the menu:"] + unordered_drinks
 
