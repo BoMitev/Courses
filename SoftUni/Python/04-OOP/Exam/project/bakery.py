@@ -156,4 +156,4 @@ class Bakery:
         return '\n'.join(info)
 
     def get_total_income(self):
-        return f"Total income: {self.total_income:.2f}"
+        return f"Total income: {self.total_income:.2f}lv"
