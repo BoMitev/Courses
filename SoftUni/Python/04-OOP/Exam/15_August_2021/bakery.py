@@ -62,7 +62,7 @@ class Bakery:
 
     def add_table(self, table_type, table_number, capacity):
         for table in self.tables_repository:
-            if table.table_number == table_type:
+            if table.table_number == table_number:
                 raise Exception(f"Table {table_number} is already in the bakery!")
 
         if table_type in self._TABLE_TYPES:
