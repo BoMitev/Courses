@@ -150,7 +150,7 @@ class Bakery:
     def get_free_tables_info(self):
         info = []
         for table in self.tables_repository:
-            if table.free_table_info():
+            if table.free_table_info() is not None:
                 info.append(table.free_table_info())
 
         return '\n'.join(info)
