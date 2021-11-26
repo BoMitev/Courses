@@ -1,6 +1,6 @@
 from abc import ABC
+
 from project.baked_food.baked_food import BakedFood
-from project.drink.drink import Drink
 
 
 class Table(ABC):
@@ -30,13 +30,14 @@ class Table(ABC):
     def order_food(self, baked_food: BakedFood):
         self.food_orders.append(baked_food)
 
-    def order_drink(self, drink: Drink):
+    def order_drink(self, drink):
         self.drink_orders.append(drink)
 
     def get_bill(self):
-        food_bill = sum([food.price for food in self.food_orders])
-        drink_bill = sum([drink.price for drink in self.drink_orders])
-        return food_bill + drink_bill
+        foods_bill = sum([food.price for food in self.food_orders])
+        drinks_bill = sum([drink.price for drink in self.drink_orders])
+
+        return foods_bill + drinks_bill
 
     def clear(self):
         self.food_orders = []
@@ -49,3 +50,5 @@ class Table(ABC):
             return f"Table: {self.table_number}\n" \
                    f"Type: {self.__class__.__name__}\n" \
                    f"Capacity: {self.capacity}"
+
+        return False

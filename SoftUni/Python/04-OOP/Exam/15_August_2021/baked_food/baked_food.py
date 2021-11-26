@@ -13,7 +13,7 @@ class BakedFood(ABC):
 
     @name.setter
     def name(self, value):
-        if not value or value == " ":
+        if not value or value.isspace():
             raise ValueError("Name cannot be empty string or white space!")
 
         self.__name = value
