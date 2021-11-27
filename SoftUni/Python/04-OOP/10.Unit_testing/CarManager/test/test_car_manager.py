@@ -1,4 +1,4 @@
-from CarManager.car_manager import Car
+from project.car_manager import Car
 
 from unittest import TestCase, main
 
